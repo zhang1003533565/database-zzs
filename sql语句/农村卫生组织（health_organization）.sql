@@ -1,0 +1,9 @@
+INSERT INTO health_organization (id, zhen, xzcs, xcyss, jhpt_update_time, dsjzx_taskid, jhpt_delete) VALUES ('1', '朱家角镇', '28', '46', '2025-03-24 08:10:59.0', '20250410', '0');
+INSERT INTO health_organization (id, zhen, xzcs, xcyss, jhpt_update_time, dsjzx_taskid, jhpt_delete) VALUES ('2', '练塘镇', '25', '74', '2025-03-24 08:10:59.0', '20250410', '0');
+INSERT INTO health_organization (id, zhen, xzcs, xcyss, jhpt_update_time, dsjzx_taskid, jhpt_delete) VALUES ('3', '金泽镇', '30', '62', '2025-03-24 08:10:59.0', '20250410', '0');
+INSERT INTO health_organization (id, zhen, xzcs, xcyss, jhpt_update_time, dsjzx_taskid, jhpt_delete) VALUES ('4', '华新镇', '19', '36', '2025-03-24 08:10:59.0', '20250410', '0');
+INSERT INTO health_organization (id, zhen, xzcs, xcyss, jhpt_update_time, dsjzx_taskid, jhpt_delete) VALUES ('5', '重固镇', '9', '18', '2025-03-24 08:10:59.0', '20250410', '0');
+INSERT INTO health_organization (id, zhen, xzcs, xcyss, jhpt_update_time, dsjzx_taskid, jhpt_delete) VALUES ('6', '赵巷镇', '5', '18', '2025-03-24 08:10:59.0', '20250410', '0');
+INSERT INTO health_organization (id, zhen, xzcs, xcyss, jhpt_update_time, dsjzx_taskid, jhpt_delete) VALUES ('7', '徐泾镇', '9', '34', '2025-03-24 08:10:59.0', '20250410', '0');
+INSERT INTO health_organization (id, zhen, xzcs, xcyss, jhpt_update_time, dsjzx_taskid, jhpt_delete) VALUES ('8', '夏阳街道', '8', '22', '2025-03-24 08:10:59.0', '20250410', '0');
+INSERT INTO health_organization (id, zhen, xzcs, xcyss, jhpt_update_time, dsjzx_taskid, jhpt_delete) VALUES ('9', '香花桥街道', '22', '22', '2025-03-24 08:10:59.0', '20250410', '0');
