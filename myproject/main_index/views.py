@@ -1,9 +1,11 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+# MainIndex/views.py
+from rest_framework.views import APIView
+from rest_framework.response import Response
 from .models import MainIndex
+from .serializers import MainIndexBasicSerializer
 
-# Create your views here.
-
-# 简单的视图函数
-def index(request):
-    return HttpResponse("欢迎访问农业主要指标数据页面!")
+class MainIndexBasicAPIView(APIView):
+    def get(self, request):
+        queryset = MainIndex.objects.all()
+        serializer = MainIndexBasicSerializer(queryset, many=True)
+        return Response(serializer.data)

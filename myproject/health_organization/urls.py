@@ -1,7 +1,8 @@
-# health_organization/urls.py
+# urls.py
 from django.urls import path
-from . import views
+from .views import HealthBasicAPIView
 
 urlpatterns = [
-    path('', views.index, name='index'),  # 视图函数
-] 
+    path('api/health/basic/', HealthBasicAPIView.as_view()),
+    #农村卫生组织接口
+]
