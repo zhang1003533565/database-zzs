@@ -1,4 +1,6 @@
-# Django 项目部署指南（基于 Windows + GitHub + MySQL）
+# Django 项目部署指南（基于 Windows + GitHub + MySQL + Docker）
+
+---
 
 ## 1. 生成 SSH 密钥并配置 GitHub
 
@@ -41,7 +43,35 @@ git clone https://github.com/zhang1003533565/database-zzs.git
 
 ---
 
-## 3. 配置 Python 虚拟环境
+## 3. 安装并启动 Docker 容器（MySQL 和 Adminer）
+
+1. **检查 Docker 是否安装**
+
+   ```bash
+   docker --version
+   ```
+
+2. **启动项目中的容器服务**
+
+   ```bash
+   docker compose up
+   ```
+
+3. **进入可视化界面 Adminer（MySQL 数据库管理工具）**
+
+   打开浏览器访问：
+
+   ```
+   http://localhost:7070
+   ```
+
+   示例界面如下：
+
+   ![img.png](img.png)
+
+---
+
+## 4. 配置 Python 虚拟环境
 
 1. **创建虚拟环境**
 
@@ -63,7 +93,7 @@ git clone https://github.com/zhang1003533565/database-zzs.git
 
 ---
 
-## 4. 初始化数据库
+## 5. 初始化数据库（可选自动创建数据库）
 
 ```bash
 python init_db.py
@@ -71,7 +101,7 @@ python init_db.py
 
 ---
 
-## 5. 进入 Django 项目并初始化模型
+## 6. 进入 Django 项目并初始化模型
 
 1. **进入项目目录**
 
@@ -104,7 +134,7 @@ python init_db.py
 
 ---
 
-## 6. 启动服务
+## 7. 启动 Django 服务
 
 ```bash
 python manage.py runserver
@@ -112,6 +142,10 @@ python manage.py runserver
 
 ---
 
-## 7. 最后执行 SQL 插入语句（如有）
+## 8. 执行 SQL 插入语句（如有）
 
-至此项目环境搭建完毕 ✅
+你可以在 Adminer 或 Django Shell 中执行自定义 SQL 插入语句，完成数据初始化。
+
+---
+
+✅ 至此，Django 项目部署环境已搭建完毕！
