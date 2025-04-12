@@ -1,5 +1,5 @@
 -- 青浦区农业技术应用
-INSERT INTO tech_application (create_time, jxhcd, jhpt_delete, jz, dmsyl, sdjxhcd, dsjzx_taskid, jdjsmj, sdjscd, jhpt_update_time, jgmj, hfsul, sdjmj, nysyl, id, dmfgmj) VALUES ('2025-03-24 08:10:59.0', '100', '0', '赵巷镇', NULL, '84.07960199', '20250410', '3718', '100', '2025-03-24 08:10:59.0', '4422', '283.5701243', '4422', '5.879396985', 1, NULL);
+INSERT INTO tech_application (create_time, jxhcd, jhpt_delete, jz, dmsyl, sdjxhcd, dsjzx_taskid, jdjsmj, sdjscd, jhpt_update_time, jgmj, hfsul, sdjmj, nysyl, id, dmfgmj) VALUES ('2025-03-24 08:10:59.0', '100', '0', '赵巷镇', '0', '84.07960199', '20250410', '3718', '100', '2025-03-24 08:10:59.0', '4422', '283.5701243', '4422', '5.879396985', 1, '0');
 -- 青浦区农业技术应用
 INSERT INTO tech_application (create_time, jxhcd, jhpt_delete, jz, dmsyl, sdjxhcd, dsjzx_taskid, jdjsmj, sdjscd, jhpt_update_time, jgmj, hfsul, sdjmj, nysyl, id, dmfgmj) VALUES ('2025-03-24 08:10:59.0', '100', '0', '徐泾镇', '2.13', '91.32402824', '20250410', '796.93', '100', '2025-03-24 08:10:59.0', '872.64', '221.6209587', '872.64', '2.939698492', 2, '246.5032709');
 -- 青浦区农业技术应用
