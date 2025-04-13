@@ -149,3 +149,11 @@ python manage.py runserver
 ---
 
 ✅ 至此，Django 项目部署环境已搭建完毕！
+
+
+
+
+npm install -g @vue/cli
+cd frontend
+npm install element-plus
+npm install axios
