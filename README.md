@@ -157,3 +157,6 @@ npm install -g @vue/cli
 cd frontend
 npm install element-plus
 npm install axios
+npm install vue-router
+npm install @element-plus/icons-vue
+
