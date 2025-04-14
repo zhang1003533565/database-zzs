@@ -36,10 +36,15 @@ const sendMessage = async () => {
   messages.value.push({ role: 'user', text: input.value })
 
   try {
-    const res = await axios.post('http://localhost:8000/api/chat/', {
+    const res = await axios.post('http://129.211.82.112:8000/api/chat/', {
       input: input.value,
       history: history.value
     })
+    // try {
+    // const res = await axios.post('http://localhost:8000/api/chat/', {
+    //   input: input.value,
+    //   history: history.value
+    // })
     messages.value.push({ role: 'ai', text: res.data.reply })
     history.value = res.data.history
   } catch (err) {
