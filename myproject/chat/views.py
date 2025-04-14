@@ -1,15 +1,16 @@
-from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
-import json
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.permissions import AllowAny
 from .graph_flow import build_graph
 
 app_graph = build_graph()
 
-@csrf_exempt
-def chat_view(request):
-    if request.method == "POST":
+class ChatAPIView(APIView):
+    permission_classes = [AllowAny]
+
+    def post(self, request):
         try:
-            data = json.loads(request.body)
+            data = request.data
             user_input = data.get("input", "")
             history = data.get("history", [])
 
@@ -20,10 +21,9 @@ def chat_view(request):
                 "history": history
             })
 
-            return JsonResponse({
+            return Response({
                 "reply": result["output"],
                 "history": result["history"]
             })
         except Exception as e:
-            return JsonResponse({"error": str(e)}, status=500)
-    return JsonResponse({"error": "Only POST allowed"}, status=405)
+            return Response({"error": str(e)}, status=500)
