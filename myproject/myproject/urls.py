@@ -22,5 +22,5 @@ urlpatterns = [
     path('rural_organization/', include('rural_organization.urls')),
     path('', include('health_organization.urls')),  # ✅ 农村卫生组织
     path('', include('main_index.urls')),  # ✅ 农业主要指标
-    path("api/", include("chat.urls")),  # ✅ 添加这行
+    path("", include("chat.urls")),  # ✅ 添加这行
 ]

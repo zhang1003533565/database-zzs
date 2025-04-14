@@ -1,3 +1,4 @@
+# chat/urls.py 或 myproject/urls.py
 from django.urls import path
 from .views import ChatAPIView
 
