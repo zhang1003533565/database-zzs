@@ -1,7 +1,11 @@
-# rural_organization/views.py
-from django.shortcuts import render
-from django.http import HttpResponse
+# RuralOrganization/views.py
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from .models import RuralOrganization
+from .serializers import RuralOrganizationBasicSerializer
 
-# 简单的视图函数
-def index(request):
-    return HttpResponse("Welcome to Rural Organization Data!")
+class RuralOrganizationBasicAPIView(APIView):
+    def get(self, request):
+        queryset = RuralOrganization.objects.all()
+        serializer = RuralOrganizationBasicSerializer(queryset, many=True)
+        return Response(serializer.data)

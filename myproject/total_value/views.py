@@ -1,9 +1,10 @@
-from django.shortcuts import render
-from django.http import HttpResponse
 from .models import TotalValue
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from .serializers import TotalValueBasicSerializer
 
-# Create your views here.
-
-# 简单的视图函数
-def index(request):
-    return HttpResponse("欢迎访问农业历年总产值数据页面!")
+class TotalValueBasicAPIView(APIView):
+    def get(self, request):
+        queryset = TotalValue.objects.all()
+        serializer = TotalValueBasicSerializer(queryset, many=True)
+        return Response(serializer.data)

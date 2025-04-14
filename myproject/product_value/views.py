@@ -1,9 +1,11 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+# ProductValue/views.py
+from rest_framework.views import APIView
+from rest_framework.response import Response
 from .models import ProductValue
+from .serializers import ProductValueBasicSerializer
 
-# Create your views here.
-
-# 简单的视图函数
-def index(request):
-    return HttpResponse("欢迎访问农业商品产值和商品率数据页面!")
+class ProductValueBasicAPIView(APIView):
+    def get(self, request):
+        queryset = ProductValue.objects.all()
+        serializer = ProductValueBasicSerializer(queryset, many=True)
+        return Response(serializer.data)

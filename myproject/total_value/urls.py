@@ -1,7 +1,7 @@
 # total_value/urls.py
 from django.urls import path
-from . import views
+from .views import TotalValueBasicAPIView
 
 urlpatterns = [
-    path('', views.index, name='index'),  # 视图函数
+    path('api/totalvalue/basic/', TotalValueBasicAPIView.as_view()),
 ] 

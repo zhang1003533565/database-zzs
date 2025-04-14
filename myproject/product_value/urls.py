@@ -1,7 +1,8 @@
-# product_value/urls.py
+# urls.py
 from django.urls import path
-from . import views
+from .views import ProductValueBasicAPIView
 
 urlpatterns = [
-    path('', views.index, name='index'),  # 视图函数
-] 
+    path('api/productvalue/basic/', ProductValueBasicAPIView.as_view()),
+    #农业主要指标接口
+]

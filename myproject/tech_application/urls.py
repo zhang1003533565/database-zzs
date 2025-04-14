@@ -1,6 +1,6 @@
 from django.urls import path
-from . import views
+from .views import TechApplicationBasicAPIView
 
 urlpatterns = [
-    path('', views.index, name='index'),  # 视图函数
+    path('api/techapplication/basic/', TechApplicationBasicAPIView.as_view()),
 ] 

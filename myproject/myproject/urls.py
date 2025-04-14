@@ -19,8 +19,13 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('rural_organization/', include('rural_organization.urls')),
+    path('', include('rural_organization.urls')),
     path('', include('health_organization.urls')),  # ✅ 农村卫生组织
     path('', include('main_index.urls')),  # ✅ 农业主要指标
+    path('', include('product_value.urls')),  # ✅ 农业商品产值和商品率
+    path('', include('rural_organization.urls')),  # ✅ 农村基层组织情况
     path("", include("chat.urls")),  # ✅ 添加这行
+    path('', include('tech_application.urls')),  # 农业技术应用
+    path('', include('total_agriculture.urls')),  # 农业总产值
+    path('', include('total_value.urls')),  # 农业历年总产值
 ]

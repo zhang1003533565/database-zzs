@@ -1,9 +1,10 @@
-from django.shortcuts import render
-from django.http import HttpResponse
 from .models import TechApplication
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from .serializers import TechApplicationBasicSerializer
 
-# Create your views here.
-
-# 简单的视图函数
-def index(request):
-    return HttpResponse("欢迎访问农业技术应用数据页面!")
+class TechApplicationBasicAPIView(APIView):
+    def get(self, request):
+        queryset = TechApplication.objects.all()
+        serializer = TechApplicationBasicSerializer(queryset, many=True)
+        return Response(serializer.data)

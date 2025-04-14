@@ -1,7 +1,7 @@
 # total_agriculture/urls.py
 from django.urls import path
-from . import views
+from .views import TotalAgricultureBasicAPIView
 
 urlpatterns = [
-    path('', views.index, name='index'),  # 视图函数
+    path('api/totalagriculture/basic/', TotalAgricultureBasicAPIView.as_view()),
 ] 
