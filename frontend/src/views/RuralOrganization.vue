@@ -1,6 +1,6 @@
 <template>
   <AppLayout>
-    <div class="main-index">
+    <div class="rural-organization">
       <h2>农村基层组织</h2>
       <!-- 图表 / 数据内容 -->
     </div>
@@ -12,7 +12,7 @@ import AppLayout from '@/components/AppLayout.vue'
 </script>
 
 <style scoped>
-.main-index {
+.rural-organization {
   background: #fff;
   padding: 20px;
   border-radius: 6px;

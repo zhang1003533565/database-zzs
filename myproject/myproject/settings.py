@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'health_organization',
     'main_index',
     'total_agriculture',
+    'chat',
 ]
 
 MIDDLEWARE = [
