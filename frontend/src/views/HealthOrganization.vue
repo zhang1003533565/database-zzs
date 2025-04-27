@@ -101,23 +101,17 @@ import { ElMessage } from 'element-plus'
 
 Chart.register(...registerables)
 
-// 模拟API请求
 const fetchData = async () => {
-  // 实际项目中这里应该是真实的API调用
-  return [
-    { id: "1", zhen: "夏阳街道", xcyss: "22", xzcs: "8", dsjzx_taskid: "20250410" },
-    { id: "10", zhen: "重固镇", xcyss: "18", xzcs: "9", dsjzx_taskid: "20250410" },
-    { id: "11", zhen: "白鹤镇", xcyss: "34", xzcs: "21", dsjzx_taskid: "20250410" },
-    { id: "2", zhen: "盈浦街道", xcyss: "7", xzcs: "5", dsjzx_taskid: "20250410" },
-    { id: "3", zhen: "香花桥街道", xcyss: "22", xzcs: "22", dsjzx_taskid: "20250410" },
-    { id: "4", zhen: "朱家角镇", xcyss: "46", xzcs: "28", dsjzx_taskid: "20250410" },
-    { id: "5", zhen: "练塘镇", xcyss: "74", xzcs: "25", dsjzx_taskid: "20250410" },
-    { id: "6", zhen: "金泽镇", xcyss: "62", xzcs: "30", dsjzx_taskid: "20250410" },
-    { id: "7", zhen: "赵巷镇", xcyss: "18", xzcs: "5", dsjzx_taskid: "20250410" },
-    { id: "8", zhen: "徐泾镇", xcyss: "34", xzcs: "9", dsjzx_taskid: "20250410" },
-    { id: "9", zhen: "华新镇", xcyss: "36", xzcs: "19", dsjzx_taskid: "20250410" }
-  ]
+  try {
+    const response = await fetch('http://129.211.82.112:8000//api/health/basic/');
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('获取数据失败:', error);
+    throw error;
+  }
 }
+
 
 const rawData = ref([])
 const chartType = ref('bar')

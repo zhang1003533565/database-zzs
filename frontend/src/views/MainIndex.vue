@@ -108,7 +108,7 @@ Chart.register(...registerables)
 // 模拟API请求
 const fetchData = async () => {
   try {
-    const response = await fetch('http://127.0.0.1:8000/api/mainindex/basic/');
+    const response = await fetch('http://129.211.82.112:8000//api/mainindex/basic/');
     const data = await response.json();
     return data;
   } catch (error) {

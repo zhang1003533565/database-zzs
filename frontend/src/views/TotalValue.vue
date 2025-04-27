@@ -158,7 +158,7 @@ const rawData = ref([])
 
 onMounted(async () => {
   try {
-    const response = await fetch('http://127.0.0.1:8000/api/totalvalue/basic/')
+    const response = await fetch('http://129.211.82.112:8000/api/totalvalue/basic/')
     const data = await response.json()
     rawData.value = data.map(item => ({...item, isExpanded: false }))
   } catch (error) {

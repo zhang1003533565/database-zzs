@@ -69,7 +69,7 @@ const rawData = ref([])
 
 onMounted(async () => {
   try {
-    const response = await fetch('http://127.0.0.1:8000/api/totalagriculture/basic/')
+    const response = await fetch('http://129.211.82.112:8000/api/totalagriculture/basic/')
     const data = await response.json()
     rawData.value = data
   } catch (error) {

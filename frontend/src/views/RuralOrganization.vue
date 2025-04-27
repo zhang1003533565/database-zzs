@@ -97,119 +97,14 @@ Chart.register(...registerables)
 
 // 模拟API请求
 const fetchData = async () => {
-  // 实际项目中这里应该是真实的API调用
-  return [
-    {
-        "id": "1",
-        "jz": "朱家角镇",
-        "cmxz": "348",
-        "ncrk": "44819",
-        "cmwyh": "28",
-        "dsjzx_taskid": "20250411",
-        "ncjzrk": "18414",
-        "ncjzhs": "7988"
-    },
-    {
-        "id": "2",
-        "jz": "练塘镇",
-        "cmxz": "409",
-        "ncrk": "50019",
-        "cmwyh": "25",
-        "dsjzx_taskid": "20250411",
-        "ncjzrk": "25607",
-        "ncjzhs": "14124"
-    },
-    {
-        "id": "3",
-        "jz": "金泽镇",
-        "cmxz": "432",
-        "ncrk": "54275",
-        "cmwyh": "30",
-        "dsjzx_taskid": "20250411",
-        "ncjzrk": "29371",
-        "ncjzhs": "15086"
-    },
-    {
-        "id": "4",
-        "jz": "华新镇",
-        "cmxz": "227",
-        "ncrk": "32349",
-        "cmwyh": "19",
-        "dsjzx_taskid": "20250411",
-        "ncjzrk": "25854",
-        "ncjzhs": "7441"
-    },
-    {
-        "id": "5",
-        "jz": "重固镇",
-        "cmxz": "144",
-        "ncrk": "16869",
-        "cmwyh": "9",
-        "dsjzx_taskid": "20250411",
-        "ncjzrk": "7766",
-        "ncjzhs": "3150"
-    },
-    {
-        "id": "6",
-        "jz": "赵巷镇",
-        "cmxz": "128",
-        "ncrk": "21035",
-        "cmwyh": "8",
-        "dsjzx_taskid": "20250411",
-        "ncjzrk": "8399",
-        "ncjzhs": "2799"
-    },
-    {
-        "id": "7",
-        "jz": "徐泾镇",
-        "cmxz": "108",
-        "ncrk": "25154",
-        "cmwyh": "9",
-        "dsjzx_taskid": "20250411",
-        "ncjzrk": "19770",
-        "ncjzhs": "5649"
-    },
-    {
-        "id": "8",
-        "jz": "白鹤镇",
-        "cmxz": "322",
-        "ncrk": "40471",
-        "cmwyh": "21",
-        "dsjzx_taskid": "20250411",
-        "ncjzrk": "29880",
-        "ncjzhs": "9943"
-    },
-    {
-        "id": "9",
-        "jz": "夏阳街道",
-        "cmxz": "91",
-        "ncrk": "11907",
-        "cmwyh": "8",
-        "dsjzx_taskid": "20250411",
-        "ncjzrk": "5875",
-        "ncjzhs": "2204"
-    },
-    {
-        "id": "10",
-        "jz": "香花桥街道",
-        "cmxz": "296",
-        "ncrk": "32498",
-        "cmwyh": "22",
-        "dsjzx_taskid": "20250411",
-        "ncjzrk": "5317",
-        "ncjzhs": "2263"
-    },
-    {
-        "id": "11",
-        "jz": "盈浦街道",
-        "cmxz": "61",
-        "ncrk": "6716",
-        "cmwyh": "5",
-        "dsjzx_taskid": "20250411",
-        "ncjzrk": "140",
-        "ncjzhs": "78"
-    }
-  ]
+  try {
+    const response = await fetch('http://129.211.82.112:8000//api/ruralorganization/basic/');
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('获取数据失败:', error);
+    throw error;
+  }
 }
 
 const rawData = ref([])
