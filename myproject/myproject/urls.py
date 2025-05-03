@@ -16,14 +16,40 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework import permissions
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
 
 # 修改管理界面标题
 admin.site.site_header = '青浦农业后台管理平台'
 admin.site.site_title = '青浦农业后台管理平台'
 admin.site.index_title = '欢迎使用青浦农业后台管理系统'
 
+# 配置 Swagger 文档
+schema_view = get_schema_view(
+    openapi.Info(
+        title="青浦农业 API 文档",
+        default_version='v1',
+        description="青浦农业后台管理平台 API 接口文档",
+        terms_of_service="https://www.yourapp.com/terms/",
+        contact=openapi.Contact(email="contact@yourapp.com"),
+        license=openapi.License(name="BSD License"),
+    ),
+    public=True,
+    permission_classes=(permissions.AllowAny,),
+)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    # 同时支持 /docs 和 /swagger 路径
+    path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-docs-ui'),
+    path('docs.json/', schema_view.without_ui(cache_timeout=0), name='schema-docs-json'),
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('swagger<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),
+    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+    
+    # 您现有的 URL 配置
     path('', include('rural_organization.urls')),
     path('', include('health_organization.urls')),  # ✅ 农村卫生组织
     path('', include('main_index.urls')),  # ✅ 农业主要指标

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'drf_yasg',
 
         # 自定义的应用
     'rural_organization',
