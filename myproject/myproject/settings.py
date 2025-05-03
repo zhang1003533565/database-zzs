@@ -35,7 +35,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
-    #'simpleui',
+    'simpleui',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -123,9 +123,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -150,3 +150,122 @@ CORS_ALLOW_ALL_ORIGINS = True
 #     "http://localhost:8080",
 #     "http://127.0.0.1:8080",
 # ]
+
+# SimpleUI 设置
+SIMPLEUI_CONFIG = {
+    'system_keep': False,
+    'menu_display': ['健康组织', '主要指标', '产品价值', '农村组织', '技术应用', '农业总量', '总价值', '认证和授权'],
+    'dynamic': True,
+    'menus': [
+        {
+            'name': '健康组织',
+            'icon': 'fas fa-hospital',
+            'models': [
+                {
+                    'name': '健康组织管理',
+                    'url': 'health_organization/healthorganization/'
+                }
+            ]
+        },
+        {
+            'name': '主要指标',
+            'icon': 'fas fa-chart-line',
+            'models': [
+                {
+                    'name': '主要指标管理',
+                    'url': 'main_index/mainindex/'
+                }
+            ]
+        },
+        {
+            'name': '产品价值',
+            'icon': 'fas fa-dollar-sign',
+            'models': [
+                {
+                    'name': '产品价值管理',
+                    'url': 'product_value/productvalue/'
+                }
+            ]
+        },
+        {
+            'name': '农村组织',
+            'icon': 'fas fa-users',
+            'models': [
+                {
+                    'name': '农村组织管理',
+                    'url': 'rural_organization/ruralorganization/'
+                }
+            ]
+        },
+        {
+            'name': '技术应用',
+            'icon': 'fas fa-cogs',
+            'models': [
+                {
+                    'name': '技术应用管理',
+                    'url': 'tech_application/techapplication/'
+                }
+            ]
+        },
+        {
+            'name': '农业总量',
+            'icon': 'fas fa-seedling',
+            'models': [
+                {
+                    'name': '农业总量管理',
+                    'url': 'total_agriculture/totalagriculture/'
+                }
+            ]
+        },
+        {
+            'name': '总价值',
+            'icon': 'fas fa-money-bill-wave',
+            'models': [
+                {
+                    'name': '总价值管理',
+                    'url': 'total_value/totalvalue/'
+                }
+            ]
+        },
+        {
+            'app': 'auth',
+            'name': '认证和授权',
+            'icon': 'fas fa-user-shield',
+            'models': [
+                {
+                    'name': '用户',
+                    'icon': 'fas fa-user',
+                    'url': 'auth/user/'
+                },
+                {
+                    'name': '用户组',
+                    'icon': 'fas fa-users',
+                    'url': 'auth/group/'
+                }
+            ]
+        }
+    ],
+    # 设置网站标题
+    'site_title': '青浦农业后台管理平台',
+    # 设置网站图标
+    'site_icon': 'fas fa-leaf',
+    # 设置登录页面标题
+    'login_title': '青浦农业后台管理平台',
+    # 设置登录页面Logo
+    'login_logo': None,
+    # 自定义按钮
+    'custom_button': True,
+    # 是否显示首页最近操作
+    'show_recent_actions': True
+}
+
+# 添加以下配置来修改管理界面标题
+SIMPLEUI_NAME = '青浦农业后台管理平台'
+
+# 修改管理界面的 Logo
+SIMPLEUI_LOGO = '/static/images/logo.png'  # 更新为您的本地 Logo 路径
+
+# 添加静态文件目录配置
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]

@@ -14,6 +14,6 @@ class HealthOrganization(models.Model):
         return f"{self.zhen} - {self.xcyss}"
 
     class Meta:
-        verbose_name = "农村卫生组织"
-        verbose_name_plural = "农村卫生组织"
+        verbose_name = '健康组织'
+        verbose_name_plural = '健康组织'
         db_table = "health_organization"  # 自定义表名

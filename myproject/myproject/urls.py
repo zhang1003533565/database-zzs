@@ -17,6 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+# 修改管理界面标题
+admin.site.site_header = '青浦农业后台管理平台'
+admin.site.site_title = '青浦农业后台管理平台'
+admin.site.index_title = '欢迎使用青浦农业后台管理系统'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('rural_organization.urls')),

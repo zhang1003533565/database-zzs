@@ -1,5 +1,15 @@
 from django.contrib import admin
 from .models import TechApplication
 
-# Register your models here.
-admin.site.register(TechApplication)
+@admin.register(TechApplication)
+class TechApplicationAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in TechApplication._meta.fields]
+    list_per_page = 20
+    search_fields = ['name']  # 假设有name字段，请根据实际模型调整
+    list_filter = ['created_at'] if hasattr(TechApplication, 'created_at') else []
+    
+    fieldsets = (
+        ('基本信息', {
+            'fields': [field.name for field in TechApplication._meta.fields if field.name != 'id']
+        }),
+    )
